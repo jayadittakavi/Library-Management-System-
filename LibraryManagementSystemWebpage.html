@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: cornsilk;
+        }
+<!-- .container style the main login box in the center of the page. -->
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+<!-- .marquee is used to style the rolling text -->
+        .marquee {
+            background: #0073e6;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .login-form {
+            margin-top: 20px;
+        }
+        input, button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #0073e6;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee">Library Timings: Monday - Friday: 9 AM - 8 PM | Saturday - Sunday: 10 AM - 6 PM | Closed on Public Holidays</div>
+    
+    <div class="container">
+        <h2>Library Management System</h2>
+        <p>Please login to continue</p>
+        
+        <div class="login-form">
+            <input type="text" id="userId" placeholder="Enter ID" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button onclick="login('user')">User Login</button>
+            <button onclick="login('admin')">Admin Login</button>
+        </div>
+    </div>
+
+    <script>
+        function login(role) {
+            var userId = document.getElementById("userId").value;
+            var password = document.getElementById("password").value;
+            
+            if (userId === "" || password === "") {
+                alert("Please enter both ID and password");
+                return;
+            }
+            
+            if (role === "user") {
+                alert("User login successful");
+                // Redirect to user dashboard (to be implemented)
+            } else {
+                alert("Admin login successful");
+                // Redirect to admin dashboard (to be implemented)
+            }
+        }
+    </script>
+</body>
+</html>
